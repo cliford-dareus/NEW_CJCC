@@ -6,12 +6,18 @@ const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const els = document.getElementsByClassName("step");
 const staffBtn = document.querySelector(".staff__section-btn");
+const customerPrev = document.querySelector(".customer__prev");
+const customerNext = document.querySelector(".customer__next");
+const parentDiv = document.querySelector(".testimony");
+const child = document.querySelector(".customer__container");
 
 menuToggler.addEventListener("click", toggleMenu);
 closeMenuToggler.addEventListener("click", toggleCloseMenu);
 prev.addEventListener("click", prevSlide);
 next.addEventListener("click", nextSlide);
 staffBtn.addEventListener("click", showMoreStaff);
+customerNext.addEventListener("click", () => slideTo("next"));
+customerPrev.addEventListener("click", () => slideTo("prev"));
 
 let slideLength = slides.length;
 let currentSlide = 0;
@@ -86,4 +92,13 @@ function progress(stepNum) {
       e.classList.remove("selected", "completed");
     }
   });
+}
+
+function slideTo(direction) {
+  const width = child.parentNode.getBoundingClientRect();
+  if(direction === 'next'){
+    child.scrollLeft += width.width + 16
+   }else{
+    child.scrollLeft -= width.width + 16
+  }
 }
