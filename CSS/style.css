@@ -101,6 +101,7 @@ button {
 
 .section {
   width: 100%;
+  margin: 3em 0;
   /* height: calc(100vh - 60px) !important; */
 }
 
@@ -245,7 +246,7 @@ button {
 
 .hero__section-title {
   color: var(--light--clr--100);
-  font-size: var(--fs--550);
+  font-size: var(--fs--600);
   font-weight: var(--fw--600);
   font-family: var(--ff--regular);
   line-height: 1.1;
@@ -258,6 +259,13 @@ button {
 @media screen and (min-width: 668px) {
   .hero__section-title {
     font-size: var(--fs--600);
+  }
+
+  .hero__section-slider{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
 
   .hero__section-desc {
@@ -330,6 +338,7 @@ button {
 
   .hero__section-slides {
     display: none;
+    gap: 1em;
     width: 100%;
   }
 
@@ -376,12 +385,11 @@ button {
 .service__title {
   flex-direction: column;
   text-align: center;
-  margin-top: 2em;
 }
 
 .service__title h2 {
   font-family: var(--ff--secondary);
-  font-size: var(--fs--500)
+  font-size: var(--fs--550)
 }
 
 .service__title p {
@@ -459,16 +467,26 @@ button {
 /* +++++++++++++++++++++++++++++++++++++SOLUTIONS+++++++++++++++++++++++++++++++++++++ */
 .solution__section {
   flex-direction: column;
-  margin: 3em auto;
+  /* margin: 3em auto; */
 }
 
 .solution__image {
   border-radius: .5em;
   overflow: hidden;
+  min-width: 250px;
 }
 
 .solution__content {
   margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.solution__list{
+  background-color: var(--primary--clr-500);
+  border-radius: var(--space--100);
+  padding: var(--space--400);
 }
 
 .solution__title {
@@ -485,7 +503,7 @@ button {
 }
 
 .solution__list-item {
-  /* width: 100%; */
+  color: var(--light--clr--100);
   margin-block: 0.2rem;
   margin-left: 2em;
   position: relative;
@@ -506,7 +524,7 @@ button {
   }
 
   .solution__image {
-    width: 100%;
+    max-width: 50%;
   }
 }
 
@@ -515,6 +533,7 @@ button {
 /* +++++++++++++++++++++++++++++++++++++STAFFS+++++++++++++++++++++++++++++++++++++ */
 .staff__section {
   flex-direction: column;
+  /* margin-bottom: 4em; */
 }
 
 .staff__grid {
@@ -581,6 +600,7 @@ button {
   font-weight: var(--fw--400);
   margin: var(--space--400);
   align-self: center;
+  border-radius: .5em;
 }
 
 .hidden__card {
@@ -610,7 +630,7 @@ button {
     font-weight: 900;
     right: -6em;
     top: 30%;
-    opacity: .3;
+    opacity: .2;
   }
 
   .staff__two {
@@ -620,13 +640,13 @@ button {
   }
 
   .staff__two::after {
-    content: 'DIRECTEUR';
+    content: 'FOUNDATEUR';
     position: absolute;
     font-size: 7rem;
     font-weight: 900;
     left: -6em;
     top: 30%;
-    opacity: .3;
+    opacity: .2;
   }
 
   .staff__three {
@@ -638,13 +658,13 @@ button {
   }
 
   .staff__three::after {
-    content: 'DIRECTEUR';
+    content: 'DOCTOR';
     position: absolute;
     font-size: 7rem;
     font-weight: 900;
-    right: -6em;
+    right: -4em;
     top: 30%;
-    opacity: .3;
+    opacity: .2;
   }
 
   .staff__four {
@@ -654,13 +674,13 @@ button {
   }
 
   .staff__four::after {
-    content: 'DIRECTEUR';
+    content: 'INFIRMIERE';
     position: absolute;
     font-size: 7rem;
     font-weight: 900;
     left: -6em;
     top: 30%;
-    opacity: .3;
+    opacity: .2;
   }
 }
 
@@ -678,6 +698,21 @@ button {
   flex-direction: row;
   overflow-x: scroll;
   gap: 1em;
+  padding: .5em 0;
+}
+
+#customer__scroll::-webkit-scrollbar {
+  height: 5px;
+}
+
+#customer__scroll::-webkit-scrollbar-track {
+  background-color: var(--light--clr--200);
+  border-radius: 1em;
+}
+
+#customer__scroll::-webkit-scrollbar-thumb {
+  background-color: var(--primary--clr-500);
+  border-radius: 1em;
 }
 
 .customer__card {
@@ -715,13 +750,14 @@ button {
 }
 
 .customer__card-btn {
-  display: flex;
   gap: var(--space--400);
   justify-content: center;
+  margin-top: var(--space--400);
 }
 
 .customer__prev,
 .customer__next {
+  font-size: var(--fs--300);
   color: var(--primary--clr-500);
 }
 
@@ -738,12 +774,6 @@ button {
     flex-direction: column;
     justify-content: center;
   }
-
-  .customer__card-btn {
-    display: flex;
-    justify-content: end;
-    margin: 2em 0;
-  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -759,15 +789,11 @@ button {
 .footer {
   height: 300px;
   background-color: var(--primary--clr-500);
-  margin-top: 4em;
+  /* margin-top: 4em; */
 }
 
 @media screen and (min-width: 1224px) {
   .container {
     max-width: 70%;
   }
-
-  /* .customer__card {
-    min-width: 32.5%;
-  } */
 }
