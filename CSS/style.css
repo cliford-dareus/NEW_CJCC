@@ -12,6 +12,9 @@
   --dark--clr-800: #08090A;
   --dark--clr-700: #3f3a3a;
 
+  --gray--clr-200: #8b929b;
+  --gray--clr-300: #acaca6;
+
   --primary--clr-500: #715AFF;
   --primary--clr-400: #467E89;
   --primary--clr-300: #00A99D;
@@ -151,11 +154,11 @@ button {
 }
 
 .mobile__nav-logo {
-  width: 200px;
+  width: 90px;
   height: 90px;
   position: absolute;
   bottom: 2em;
-  right: -2em;
+  right: 1em;
 }
 
 .nav__list {
@@ -261,7 +264,7 @@ button {
     font-size: var(--fs--600);
   }
 
-  .hero__section-slider{
+  .hero__section-slider {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -279,7 +282,7 @@ button {
   .hero__section {
     height: 50vh;
     background: center / cover no-repeat url('/pexels-thirdman-5327649.jpg');
-    background-color: #8b929b;
+    background-color: var(--gray--clr-200);
     background-blend-mode: multiply;
     background-position-y: -5em;
   }
@@ -306,7 +309,7 @@ button {
     width: 20px;
     height: 20px;
     background: #fff;
-    border: 2px solid #ACACA6;
+    border: 2px solid var(--gray--clr-300);
     border-radius: 50%;
     transition: background 1s;
     z-index: 2;
@@ -324,7 +327,7 @@ button {
   .progress {
     position: absolute;
     height: 100%;
-    border-right: 2px solid #ACACA6;
+    border-right: 2px solid var(--gray--clr-300);
     z-index: 1;
   }
 
@@ -340,6 +343,10 @@ button {
     display: none;
     gap: 1em;
     width: 100%;
+
+  }
+  .hero__section-slides p{
+    align-self: center;
   }
 
   .hide {
@@ -376,8 +383,18 @@ button {
     background-position-y: -5em;
   }
 
+  .hero__section-title {
+    font-size: 3.5rem;
+  }
+
   .box {
-    width: 40%;
+    width: 50%;
+    height: 300px;
+  }
+
+  .two,
+  .three {
+    width: 80%;
   }
 }
 
@@ -389,7 +406,7 @@ button {
 
 .service__title h2 {
   font-family: var(--ff--secondary);
-  font-size: var(--fs--550)
+  font-size: var(--fs--500)
 }
 
 .service__title p {
@@ -410,7 +427,7 @@ button {
 }
 
 .services__card-container div:nth-child(2) {
-  background-color: #715AFF;
+  background-color: var(--primary--clr-500);
   color: var(--light--clr--100);
 }
 
@@ -446,7 +463,11 @@ button {
   color: var(--primary--clr-300);
 }
 
-@media screen and (min-width: 668px) {}
+@media screen and (min-width: 668px) {
+  .service__title h2 {
+    font-size: var(--fs--550)
+  }
+}
 
 @media screen and (min-width: 1024px) {
   .services__card-container {
@@ -460,7 +481,7 @@ button {
   }
 
   .service__title h2 {
-    font-size: var(--fs--500);
+    font-size: var(--fs--600);
   }
 }
 
@@ -468,6 +489,8 @@ button {
 .solution__section {
   flex-direction: column;
   /* margin: 3em auto; */
+
+  border-radius: var(--space--100);
 }
 
 .solution__image {
@@ -483,7 +506,7 @@ button {
   justify-content: center;
 }
 
-.solution__list{
+.solution__list {
   background-color: var(--primary--clr-500);
   border-radius: var(--space--100);
   padding: var(--space--400);
@@ -504,7 +527,7 @@ button {
 
 .solution__list-item {
   color: var(--light--clr--100);
-  margin-block: 0.2rem;
+  margin-block: 0.5rem;
   margin-left: 2em;
   position: relative;
   font-size: var(--fs--100);
@@ -699,6 +722,7 @@ button {
   overflow-x: scroll;
   gap: 1em;
   padding: .5em 0;
+  scroll-behavior: smooth;
 }
 
 #customer__scroll::-webkit-scrollbar {
