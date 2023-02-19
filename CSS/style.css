@@ -229,7 +229,51 @@ button {
 
 @media screen and (min-width: 668px) {}
 
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 1024px) {
+  .main__nav {
+    position: static;
+    top: initial;
+    left: initial;
+    width: initial;
+    height: initial;
+    padding: initial;
+    color: var(--dark--clr--900);
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 33;
+    transform: initial;
+    transition: none;
+  }
+
+  .nav__title,
+  .nav__menu-close-btn,
+  .mobile__nav-logo,
+  .nav__contacts,
+  .nav__menu-toggler {
+    display: none
+  }
+
+  .nav__list {
+    flex-direction: initial;
+    gap: 1em;
+    font-weight: normal;
+    margin-top: 0;
+  }
+
+  .nav__list-item {
+    width: initial;
+    padding: 0;
+    border-bottom: none;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--fs--200);
+    font-weight: 900;
+  }
+
+  .nav__list-item img {
+    display: none;
+  }
+}
 
 /* +++++++++++++++++++++++++++++++++++++++HERO++++++++++++++++++++++++++++++++++ */
 .main {
@@ -345,7 +389,8 @@ button {
     width: 100%;
 
   }
-  .hero__section-slides p{
+
+  .hero__section-slides p {
     align-self: center;
   }
 
