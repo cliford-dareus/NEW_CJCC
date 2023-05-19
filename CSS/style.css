@@ -609,14 +609,14 @@ button {
   margin-top: 2em;
   display: grid;
   grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
+  grid-auto-rows: 300px;
   background-color: var(--primary--clr-400);
   overflow: hidden;
 }
 
 .staff__card {
   width: 100%;
-  height: 100%;
+  height: 300px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -680,9 +680,9 @@ button {
 }
 
 @media screen and (min-width: 668px) {
-  .staff__grid {
+  /* .staff__grid {
     grid-auto-rows: 350px;
-  }
+  } */
 
   .staff__one {
     position: relative;
