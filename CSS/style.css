@@ -876,6 +876,45 @@ button {
   /* margin-top: 4em; */
 }
 
+.footer__container{
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  color: var(--primary--clr-100)
+}
+
+.footer__list{ 
+}
+
+.newsletter{
+  background-color: var(--primary--clr-200);
+  padding: 1em;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter__form{
+  margin-top: .5em;
+  display: flex;
+  gap: 1em;
+}
+
+.newsletter__form input{
+  width: 80%;
+  border: none;
+  background-color: var(--primary--clr-100);
+  border-radius: 0.2em;
+  padding: .2em 1em;
+}
+
+.newsletter__form-btn{
+  background-color: var(--primary--clr-500);
+  flex: 1;
+}
+
 @media screen and (min-width: 1224px) {
   .container {
     max-width: 70%;
