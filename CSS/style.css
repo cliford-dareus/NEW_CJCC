@@ -184,7 +184,7 @@ button {
 
 .nav__list-item:focus-visible,
 .nav__list-item:hover {
-  background-color: blanchedalmond;
+  background-color: var(--primary--clr-200);
 }
 
 .nav__contacts {
@@ -268,6 +268,12 @@ button {
     align-items: center;
     font-size: var(--fs--200);
     font-weight: 900;
+  }
+  
+  .nav__list-item:hover,
+  .nav__list-item:focus-visible {
+    border-bottom: 1px solid var(--primary--clr-500);
+    background-color: transparent;
   }
 
   .nav__list-item img {
@@ -424,7 +430,7 @@ button {
 
 @media screen and (min-width: 1024px) {
   .hero__section {
-    height: 60vh;
+    height: 70vh;
     background-position-y: -5em;
   }
 
