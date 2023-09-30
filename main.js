@@ -1,10 +1,15 @@
+// Menu
 const menuToggler = document.querySelector(".nav__menu-toggler");
 const menu = document.querySelector(".main__nav");
 const closeMenuToggler = document.querySelector(".nav__menu-close-btn");
+
+// Hero slider
 const slides = document.querySelectorAll(".hero__section-slides");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const els = document.getElementsByClassName("step");
+
+// Staff
 const staffBtn = document.querySelector(".staff__section-btn");
 const customerPrev = document.querySelector(".customer__prev");
 const customerNext = document.querySelector(".customer__next");
@@ -31,10 +36,15 @@ function toggleCloseMenu() {
 
 function showMoreStaff() {
   const staffCard = document.querySelectorAll(".staff__card");
-
-  staffCard.forEach((card) => {
+    staffCard.forEach((card) => {
     if (card.classList.contains("hidden__card")) {
       card.classList.toggle("hide__card");
+
+      if(card.classList.contains("hide__card")){
+        staffBtn.innerHTML = 'Show less'
+      }else{
+        staffBtn.innerHTML = 'Shore more'
+      }
     }
   });
 }
@@ -48,6 +58,7 @@ function prevSlide() {
   }
   slides[currentSlide].classList.add("active");
   progress(currentSlide);
+  console.log(currentSlide)
 }
 
 function nextSlide() {
@@ -68,32 +79,36 @@ function hideAllSlides() {
   }
 }
 
+// Hero slide
 let steps = [];
 
 Array.prototype.forEach.call(els, (e) => {
   steps.push(e);
-  progress(1);
+  progress(0);
 });
 
 function progress(stepNum) {
   let p = 0;
-  p = stepNum * 50;
+  p = stepNum * 50; 
 
-  document.getElementsByClassName("percent")[0].style.height = `${p}%`;
+  
+
+  document.querySelector(".percent").style.height = `${p}%`;
   steps.forEach((e) => {
-    if (e.id == stepNum) {
+    if (e.id == stepNum + 1) {
       e.classList.add("selected");
-      e.classList.remove("completed");
-    }
-    if (e.id < stepNum) {
       e.classList.add("completed");
     }
-    if (e.id > stepNum) {
+    if (e.id < stepNum + 1) {
+      e.classList.add("completed");
+    }
+    if (e.id > stepNum + 1) {
       e.classList.remove("selected", "completed");
     }
   });
 }
 
+// Testimony Slides
 function slideTo(direction) {
   const width = child.parentNode.getBoundingClientRect();
   if(direction === 'next'){

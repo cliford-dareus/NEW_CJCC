@@ -506,6 +506,15 @@ button {
 
 .card__link {
   color: var(--primary--clr-300);
+  transition: all 2s ease-in-out;
+}
+
+.card__link:hover{
+  border-bottom: 1px solid var(--primary--clr-500);
+}
+
+.middle:hover{
+  border-bottom: 1px solid var(--primary--clr-100)
 }
 
 @media screen and (min-width: 668px) {
@@ -669,6 +678,7 @@ button {
   margin: var(--space--400);
   align-self: center;
   border-radius: .5em;
+  cursor: pointer;
 }
 
 .hidden__card {
@@ -828,6 +838,11 @@ button {
 .customer__next {
   font-size: var(--fs--300);
   color: var(--primary--clr-500);
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid var(--primary--clr-500);
+  width: 40px;
+  height: 40px;
 }
 
 @media screen and (min-width: 668px) {
